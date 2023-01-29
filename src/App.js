@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import Container from "./Container"
 import Header from "./Header";
 import Section from "./Section";
@@ -17,8 +18,13 @@ let tasks = [
       done: true,
   },
 ]
-let hideDone = false; // in default show all tasks
+
 function App() {
+  const [hideDone, setHideDone] = useState(false)
+
+  const toggleHideDone = () => {
+    setHideDone(hideDone => !hideDone);
+  }
   return (
     <Container>
         <Header />
@@ -30,7 +36,7 @@ function App() {
         <Section
          title="Lista zadań"
          body={<TasksList tasks={tasks} hideDone={hideDone} />}
-         extraHeaderContent={<ExternalsButtons tasks={tasks} hideDone={hideDone}/>}
+         extraHeaderContent={<ExternalsButtons tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone}/>}
         />
     </Container>
   );
