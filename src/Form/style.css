@@ -15,11 +15,11 @@
     padding: 10px 12px;
     border: none;
     color: #fff;
-    background-color: #007f80;
+    background-color: hsl(180, 100%, 25%);
     cursor: pointer;
     transition: transform .3s, background-color .3s;
 }
 .taskForm__button:hover {
-    background-color: #099;
-    transform: scale(1.01);
+    background-color: #009999;
+    transform: scale(1.05);
 }
