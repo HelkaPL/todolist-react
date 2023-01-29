@@ -18,7 +18,7 @@ That's how it probably work.<br>
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+Deployed version of page you can watch here [To Do List - React ](https://helkapl.github.io/todolist-react/)
 ## Available Scripts
 
 In the project directory, you can run:
