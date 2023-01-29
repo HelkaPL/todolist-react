@@ -5,7 +5,7 @@ const TasksList = ( props ) => (
         {props.tasks.map(task => (
             <li
                 key={task.id}
-                className={`taskList${task.done && props.hideDoneTasks ? ' taskList--hidden' : ''}
+                className={`taskList${task.done && props.hideDone ? ' taskList--hidden' : ''}
                 `}>
             <input
                 type="button" 

@@ -17,7 +17,7 @@ let tasks = [
       done: true,
   },
 ]
-let hideDoneTasks = false; // in default show all tasks
+let hideDone = false; // in default show all tasks
 function App() {
   return (
     <Container>
@@ -29,8 +29,8 @@ function App() {
 
         <Section
          title="Lista zadań"
-         body={<TasksList tasks={tasks} hideDoneTasks={hideDoneTasks} />}
-         extraHeaderContent={<ExternalsButtons tasks={tasks} hideDoneTasks={hideDoneTasks}/>}
+         body={<TasksList tasks={tasks} hideDone={hideDone} />}
+         extraHeaderContent={<ExternalsButtons tasks={tasks} hideDone={hideDone}/>}
         />
     </Container>
   );
