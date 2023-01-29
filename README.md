@@ -1,4 +1,21 @@
-# Getting Started with Create React App
+# To Do List - bootstraped with Reack
+
+Language of site is Polish.<br>
+It's basicly simply version of to do list, where you can add somethink to, and makr it as done if you done it.
+
+## Demo
+
+You can chceck there -> [ToDoList-React - YouCode](https://helkapl.github.io/todolist-react/)
+
+That's how it probably work.<br>
+![ToDoList-React - YouCode Demo](src/CPT2301252205-450x213.gif)
+
+## Technologies
+- HTML
+- CSS
+- JavaScript (ES6+)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
