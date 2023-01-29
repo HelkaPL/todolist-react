@@ -1,6 +1,6 @@
 import "./style.css"
 
-const ExternalsButtons = ({ tasks, hideDone, toggleHideDone}) => {
+const ExternalsButtons = ({ tasks, hideDone, toggleHideDone, setAllTaskDone}) => {
     return tasks.length > 0 && (
     <div className="externals">
         <button
@@ -9,7 +9,8 @@ const ExternalsButtons = ({ tasks, hideDone, toggleHideDone}) => {
         >
         {hideDone ? 'Pokaż' : 'Ukryj'} zakończone
         </button>
-        <button 
+        <button
+            onClick={setAllTaskDone} 
             className={`externals__button${tasks.every(({ done }) => done) ? '--disabled' : ''}`}
             disabled={tasks.every(({ done }) => done)}
         >
