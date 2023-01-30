@@ -8,16 +8,14 @@ import TasksList from "./TasksList";
 
 const localeTasks = JSON.parse(localStorage.getItem("tasks"));
 
+
 function App() {
+  const defaultTasks =  [
+    { id: 1, content: 'Pierwsze zadanie, wciaz niewykonane', done: false },
+    { id: 2, content: 'Drugie zadanie, już wykonane', done: true },
+  ];
   const [hideDone, setHideDone] = useState(false)
-  const [tasks, setTasks] = useState(
-    localeTasks
-      ? localeTasks
-      : [
-          { id: 1, content: 'Pierwsze zadanie, wciaz niewykonane', done: false },
-          { id: 2, content: 'Drugie zadanie, już wykonane', done: true },
-        ]
-  );
+  const [tasks, setTasks] = useState(localeTasks || defaultTasks);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
