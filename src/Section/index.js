@@ -3,7 +3,7 @@ import { Box, Title, Body } from "./styled";
 const Section = ({ title, body, extraHeaderContent }) => (
     <Box>
         <header>
-            <Title>
+            <Title as="h2">
                 {title}
             </Title>
             {extraHeaderContent}

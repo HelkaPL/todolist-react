@@ -10,7 +10,7 @@ const localeTasks = JSON.parse(localStorage.getItem("tasks"));
 
 
 function App() {
-  const defaultTasks =  [
+  const defaultTasks = [
     { id: 1, content: 'Pierwsze zadanie, wciaz niewykonane', done: false },
     { id: 2, content: 'Drugie zadanie, już wykonane', done: true },
   ];
@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
-  
+
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
   }
