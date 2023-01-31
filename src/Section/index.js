@@ -1,15 +1,17 @@
-import "./style.css";
+import { Box, Title, Body } from "./styled";
 
-const Section = ({title, body, extraHeaderContent}) => (
-    <section className="section">
-    <header>
-        <h2 className="section__title">{title}</h2>
-        {extraHeaderContent}
-    </header>
-    <div className="section__content">
-        {body}
-    </div>
-  </section>
+const Section = ({ title, body, extraHeaderContent }) => (
+    <Box>
+        <header>
+            <Title>
+                {title}
+            </Title>
+            {extraHeaderContent}
+        </header>
+        <Body>
+            {body}
+        </Body>
+    </Box>
 
 );
 
