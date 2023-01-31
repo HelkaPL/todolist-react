@@ -28,7 +28,7 @@ export const Button = styled.button`
     height: 40px;
     padding: 10px 12px;
     border: none;
-    color: #fff;
+    color: ${({theme}) => theme.color.white};
     cursor: pointer;
     transition: color 0.3s, background-color 0.3s;
 
