@@ -1,30 +1,37 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Box, Content, Button } from "./styled"
 
 const Form = ({ addNewTask }) => {
-    const [newTaskContent, setNewTaskContent] = useState("");    
-    
+    const [newTaskContent, setNewTaskContent] = useState("");
+
+    const inputRef = useRef(null);
+
+    const focusInput = () => {
+        inputRef.current.focus();
+    };
+
     const onFormSubmit = e => {
         e.preventDefault();
         if(newTaskContent.trim() === ""){ return }
         addNewTask(newTaskContent.trim());
-        setNewTaskContent("")        
-    }
+        setNewTaskContent("");
+        focusInput();        
+    };
 
     return (
-    <Box onSubmit={onFormSubmit}
-    >
+    <Box onSubmit={onFormSubmit}>
         <Content 
             value={newTaskContent}
             onChange={e => setNewTaskContent(e.target.value)}
             placeholder="Co jest do zrobienia?"
-            autoFocus>    
+            ref={inputRef}
+            >    
         </Content>
         <Button>
             Dodaj zadanie
         </Button>
     </Box>
-    )
+    );
 };
 
 export default Form;
