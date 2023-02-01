@@ -13,15 +13,10 @@ export const Button = styled.button`
         color: #00cccc;
     }
 
-    ${({ disabled }) => disabled && css`
+    &:disabled {
         color: ${({ theme }) => theme.color.silver};
         cursor: default;
-
-        &:hover {
-            color: ${({ theme }) => theme.color.silver};
-            
-        }
-    `}
+    }
 `;
 
 export const Externals = styled.div`
