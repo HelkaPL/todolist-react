@@ -1,10 +1,10 @@
 import { useTasks } from "./useTasks";
-import Container from "./Container"
-import Header from "./Header";
-import Section from "./Section";
-import Form from "./Form";
-import ExternalsButtons from "./ExternalsButtons";
-import TasksList from "./TasksList";
+import Container from "./common/Container"
+import Header from "./common/Header";
+import Section from "./common/Section";
+import Form from "./features/tasks/Form";
+import ExternalsButtons from "./features/tasks/ExternalsButtons";
+import TasksList from "./features/tasks/TasksList";
 
 function App() {
 

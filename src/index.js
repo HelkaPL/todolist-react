@@ -6,6 +6,33 @@ import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from 'styled-components';
 import { theme } from "./theme";
 
+import { configureStore } from "@reduxjs/toolkit";
+
+const initialState = {
+  tasks: [],
+};
+
+const tasksReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "addTask":
+      return {
+        ...state,
+        tasks: [
+          ...state.tasks,
+          {
+            content: action.payload,
+          },
+        ],
+      };
+    default:
+      return state;
+
+  }
+};
+
+const store = configureStore({ reducer: tasksReducer });
+console.log(store.getState());
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
