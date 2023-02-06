@@ -1,29 +1,34 @@
-import Container from "./common/Container"
-import Header from "./common/Header";
-import Section from "./common/Section";
-import Form from "./features/tasks/Form";
-import ExternalsButtons from "./features/tasks/ExternalsButtons";
-import TasksList from "./features/tasks/TasksList";
-import ButtonFetch from "./common/Buttons";
+import { HashRouter, Link, NavLink, Redirect, Route, Router, Switch } from "react-router-dom";
+import Author from "./features/tasks/author/author";
+import TaskApp from "./features/tasks/taskApp";
 
 function App() {
 
-  return (
-    <Container>
-      <Header />
-      <Section
-        title="Dodaj nowe zadanie"
-        extraHeaderContent={<ButtonFetch />}
-        body={<Form />}
-      />
-
-      <Section
-        title="Lista zadań"
-        extraHeaderContent={<ExternalsButtons />}
-        body={<TasksList />}
-      />
-    </Container>
-  );
+    return (
+        <HashRouter>
+            <nav>
+                <ul>
+                    <li>
+                        <NavLink to="/tasks">Lista zadań</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/author">O autorze</NavLink>
+                    </li>
+                </ul>
+                <Switch>
+                    <Route path="/tasks">
+                        <TaskApp />
+                    </Route>
+                    <Route path="/author">
+                        <Author />
+                    </Route>
+                    <Route path="/">
+                        <Redirect to="/tasks" />
+                    </Route>
+                </Switch>
+            </nav>
+        </HashRouter>
+    );
 }
 
 export default App;
