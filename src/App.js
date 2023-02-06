@@ -1,32 +1,29 @@
-import { HashRouter, Link, NavLink, Redirect, Route, Router, Switch } from "react-router-dom";
-import Author from "./features/tasks/author/author";
-import TaskApp from "./features/tasks/taskApp";
+import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import Navigation from "./common/Navigation";
+import TasksApp from "./features/tasks/TasksApp";
+import TaskPage from "./features/tasks/TaskPage";
+import AuthorPage from "./features/author/authorPage";
 
 function App() {
 
     return (
         <HashRouter>
-            <nav>
-                <ul>
-                    <li>
-                        <NavLink to="/tasks">Lista zadań</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/author">O autorze</NavLink>
-                    </li>
-                </ul>
-                <Switch>
-                    <Route path="/tasks">
-                        <TaskApp />
-                    </Route>
-                    <Route path="/author">
-                        <Author />
-                    </Route>
-                    <Route path="/">
-                        <Redirect to="/tasks" />
-                    </Route>
-                </Switch>
-            </nav>
+            <Navigation />
+            <Switch>
+                <Route path="/tasks/:id">
+                    <TaskPage />
+                </Route>
+                <Route path="/tasks">
+                    <TasksApp />
+                </Route>
+                <Route path="/author">
+                    <AuthorPage />
+                </Route>
+                <Route path="/">
+                    <Redirect to="/tasks" />
+                </Route>
+            </Switch>
+
         </HashRouter>
     );
 }

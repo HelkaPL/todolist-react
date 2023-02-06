@@ -1,12 +1,13 @@
-import Container from "../../common/Container"
-import Header from "../../common/Header";
-import Section from "../../common/Section";
+import Container from "../../../common/Container"
+import Header from "../../../common/Header";
+import Section from "../../../common/Section";
+import ButtonFetch from "../../../common/Buttons";
 import Form from "./Form";
+import Search from "./Search";
 import ExternalsButtons from "./ExternalsButtons";
 import TasksList from "./TasksList";
-import ButtonFetch from "../../common/Buttons";
 
-function TaskApp() {
+function TasksApp() {
 
   return (
     <Container>
@@ -18,6 +19,11 @@ function TaskApp() {
       />
 
       <Section
+        title="Wyszukiwarka"
+        body={<Search />}
+      />
+
+      <Section
         title="Lista zadań"
         extraHeaderContent={<ExternalsButtons />}
         body={<TasksList />}
@@ -26,4 +32,4 @@ function TaskApp() {
   );
 }
 
-export default TaskApp;
+export default TasksApp;

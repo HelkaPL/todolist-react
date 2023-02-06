@@ -10,10 +10,6 @@ export const Box = styled.form`
     }
 `;
 
-export const Content = styled.input`
-    padding: 10px 10px;
-`;
-
 export const Button = styled.button`
     padding: 10px 12px;
     border: none;

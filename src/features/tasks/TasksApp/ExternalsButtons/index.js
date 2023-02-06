@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { selectTasks, toggleHideDone, setAllTaskDone } from "../taskSlice";
+import { selectTasks, toggleHideDone, setAllTaskDone } from "../../taskSlice";
 import { Externals, Button } from "./styled";
 
 
