@@ -8,9 +8,6 @@ const ExternalsButtons = () => {
     const dispatch = useDispatch()
     return tasks.length > 0 && (
     <Externals>
-        <Button onClick={() => dispatch(fetchExampleTasks())}>
-            Pobierz przykładowe zadania.
-        </Button>
         <Button onClick={() => dispatch(toggleHideDone())}>
             {hideDone ? 'Pokaż' : 'Ukryj'} zakończone
         </Button>

@@ -4,8 +4,8 @@ import { getTasksFromLocaleStorage } from "./tasksLocalStorage";
 const tasksSlice = createSlice({
     name: 'tasks',
     initialState: {
-        tasks: getTasksFromLocaleStorage(),
-        hideDone: false,
+        tasks: getTasksFromLocaleStorage().tasks,
+        hideDone: getTasksFromLocaleStorage().hideDone || false,
     },
     reducers: {
         addTask: ({ tasks }, { payload }) => {
@@ -33,5 +33,7 @@ const tasksSlice = createSlice({
 });
 
 export const { addTask, toggleHideDone, toggleTaskDone, removeTask, setAllTaskDone, fetchExampleTasks, setExampleTasks } = tasksSlice.actions;
+
 export const selectTasks = state => state.tasks;
+
 export default tasksSlice.reducer;

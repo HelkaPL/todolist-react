@@ -4,6 +4,7 @@ import Section from "./common/Section";
 import Form from "./features/tasks/Form";
 import ExternalsButtons from "./features/tasks/ExternalsButtons";
 import TasksList from "./features/tasks/TasksList";
+import ButtonFetch from "./common/Buttons";
 
 function App() {
 
@@ -12,13 +13,14 @@ function App() {
       <Header />
       <Section
         title="Dodaj nowe zadanie"
+        extraHeaderContent={<ButtonFetch />}
         body={<Form />}
       />
 
       <Section
         title="Lista zadań"
-        body={<TasksList />}
         extraHeaderContent={<ExternalsButtons />}
+        body={<TasksList />}
       />
     </Container>
   );
