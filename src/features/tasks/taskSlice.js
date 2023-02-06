@@ -4,7 +4,7 @@ import { getTasksFromLocaleStorage } from "./tasksLocalStorage";
 const tasksSlice = createSlice({
     name: 'tasks',
     initialState: {
-        tasks: getTasksFromLocaleStorage().tasks,
+        tasks: getTasksFromLocaleStorage().tasks || [],
         hideDone: getTasksFromLocaleStorage().hideDone || false,
     },
     reducers: {
@@ -14,26 +14,47 @@ const tasksSlice = createSlice({
         toggleHideDone: state => {
             state.hideDone = !state.hideDone;
         },
-        toggleTaskDone: ({ tasks }, { payload }) => {
-            const index = tasks.findIndex(({ id }) => id === payload);
+        toggleTaskDone: ({ tasks }, { payload: taskId }) => {
+            const index = tasks.findIndex(({ id }) => id === taskId);
             tasks[index].done = !tasks[index].done;
         },
-        removeTask: ({ tasks }, { payload }) => {
-            const index = tasks.findIndex(({ id }) => id === payload);
+        removeTask: ({ tasks }, { payload: taskId }) => {
+            const index = tasks.findIndex(({ id }) => id === taskId);
             tasks.splice(index, 1)
         },
         setAllTaskDone: ({ tasks }) => {
             tasks.forEach(task => task.done = true);
         },
-        fetchExampleTasks: () => { },
+        fetchExampleTasks: (state) => {
+            state.loading = true;
+        },
+        exampleTasksSuccess: (state, {payload: tasks}) => {
+            state.tasks = tasks;
+            state.loading = false;
+        },
+        exampleTasksError: (state) => {
+            state.loading = false;
+        },
         setExampleTasks: (state, { payload: tasks }) => {
             state.tasks = tasks;
-        }
+            state.loading = false;
+        },
     },
 });
 
-export const { addTask, toggleHideDone, toggleTaskDone, removeTask, setAllTaskDone, fetchExampleTasks, setExampleTasks } = tasksSlice.actions;
+export const { 
+    addTask,
+    toggleHideDone,
+    toggleTaskDone,
+    removeTask,
+    setAllTaskDone,
+    fetchExampleTasks,
+    setExampleTasks,
+    exampleTasksSuccess,
+    exampleTasksError
+} = tasksSlice.actions;
 
 export const selectTasks = state => state.tasks;
+export const selectLoading = state => selectTasks(state).loading;
 
 export default tasksSlice.reducer;
