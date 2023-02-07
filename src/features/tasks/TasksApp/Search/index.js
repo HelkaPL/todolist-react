@@ -11,7 +11,7 @@ export default () => {
         const searchParams = new URLSearchParams(location.search);
 
         if (target.value.trim() === "") {
-            searchParams.delete("sukaj");
+            searchParams.delete("szukaj");
         } else {
             searchParams.set("szukaj", target.value);
         }
