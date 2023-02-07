@@ -10,20 +10,19 @@ function App() {
         <HashRouter>
             <Navigation />
             <Switch>
-                <Route path="/tasks/:id">
-                    <TaskPage />
-                </Route>
-                <Route path="/tasks">
-                    <TasksApp />
-                </Route>
-                <Route path="/author">
-                    <AuthorPage />
-                </Route>
-                <Route path="/">
-                    <Redirect to="/tasks" />
-                </Route>
-            </Switch>
-
+            <Route path="/tasks/:id">
+                <TaskPage />
+            </Route>
+            <Route path="/tasks">
+                <TasksApp />
+            </Route>
+            <Route path="/author">
+                <AuthorPage />
+            </Route>
+            <Route path="/">
+                <Redirect to="/tasks" />
+            </Route>
+        </Switch>
         </HashRouter>
     );
 }

@@ -1,11 +1,11 @@
 [
     {
-        "id": 1,
+        "id": "OK0wy9haJjWDaqqagQv1-",
         "content": "Redux store, wciaz niewykonane",
         "done": false
     },
     {
-        "id": 2,
+        "id": "tCsLor0JLXyHdHSoN0Np_",
         "content": "Drugie zadanie, już wykonane",
         "done": true
     }
